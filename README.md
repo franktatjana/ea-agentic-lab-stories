@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EA Agentic Lab Stories
 
-## Getting Started
+Interactive stories that show how AI agents solve real pain points in enterprise sales engineering. Each story starts with a familiar problem, walks through the cost of the status quo, and reveals how agentic AI changes the outcome.
 
-First, run the development server:
+These aren't feature demos. They're experiences designed to make you feel the problem before you see the solution.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Stories
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**The Onboarding Trap** - Your new SA won't be useful for 90 days. Here's what that costs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**The Tribal Knowledge Trap** - "Ask John, he knows." John is on vacation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**The Self-Learning System** - Your CRM learned nothing from 200 deals. What if it did? Explores how AI agents capture meeting knowledge, learn from deal outcomes, and improve recommendations over time.
 
-## Learn More
+**The Interface Gap** - You wrote perfect documentation. Half your team will never read it. Features an interactive "Choose Your Player" system where readers experience the story through their own cognitive style: Reader, Talker, Visual, or Doer.
 
-To learn more about Next.js, take a look at the following resources:
+## Coming Soon
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **The Question Tax** - Your senior SA answered "Where is the pricing doc?" 23 times this month.
+- **Starting from Zero** - 247 deals closed. Every new one still starts with a blank page.
+- **The Handoff Gap** - Sales closed the deal. Nobody told the CA what was promised.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## About
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Part of the [EA Agentic Lab](https://ea-agentic-lab.onrender.com) project, exploring how AI agent teams support enterprise sales teams.
