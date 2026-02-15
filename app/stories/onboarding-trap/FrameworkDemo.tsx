@@ -67,71 +67,8 @@ export function FrameworkDemo() {
           </div>
         </ScrollReveal>
 
-        {/* Onboarding Blueprint */}
-        <ScrollReveal delay={0.1}>
-          <div className="rounded-xl border border-border bg-surface overflow-hidden">
-            <div className="border-b border-border px-4 py-2 flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/60" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-              <div className="w-3 h-3 rounded-full bg-green-500/60" />
-              <span className="ml-3 text-xs text-muted font-mono">
-                blueprint — SA Onboarding
-              </span>
-            </div>
-
-            <div className="p-6 font-mono text-sm space-y-4">
-              <div className="space-y-1">
-                <p className="text-accent">BLUEPRINT: SA Onboarding — Structured Track</p>
-                <p className="text-muted text-xs mt-1">Replaces 90-day unstructured ramp with guided playbook sequence</p>
-              </div>
-
-              <div className="border-t border-border pt-4 space-y-3">
-                <div>
-                  <p className="text-foreground">WEEK 1-2: Foundation</p>
-                  <div className="ml-4 space-y-1 text-muted">
-                    <p>├── PB_001: Organization &amp; Tool Orientation</p>
-                    <p>├── PB_002: Product Knowledge Essentials</p>
-                    <p>└── PB_003: InfoHub &amp; Knowledge Vault Walkthrough</p>
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-foreground">WEEK 3-4: Skill Building</p>
-                  <div className="ml-4 space-y-1 text-muted">
-                    <p>├── PB_101: Stakeholder Mapping</p>
-                    <p>├── PB_201: Technical Discovery Framework</p>
-                    <p>└── PB_301: Competitive Positioning Basics</p>
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-foreground">WEEK 5-8: Guided Engagements</p>
-                  <div className="ml-4 space-y-1 text-muted">
-                    <p>├── PB_102: Qualification Criteria Checklist</p>
-                    <p>├── PB_202: Architecture Assessment Template</p>
-                    <p>└── PB_401: First Solo Engagement Runbook</p>
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-foreground">WEEK 9-12: Independence</p>
-                  <div className="ml-4 space-y-1 text-muted">
-                    <p>├── PB_103: Business Case Development</p>
-                    <p>├── PB_402: Deal Review Self-Assessment</p>
-                    <p>└── PB_403: Knowledge Contribution Guide</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border-t border-border pt-4 text-muted">
-                <p>Onboarding is not a calendar. <span className="text-accent">It&apos;s a blueprint.</span></p>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-
         {/* Stats grid */}
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal delay={0.1}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {features.map((f) => (
               <div

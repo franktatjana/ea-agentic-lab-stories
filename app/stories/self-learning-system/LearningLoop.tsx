@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function LearningLoop() {
   return (
-    <Section id="learning-loop" className="border-t border-border">
+    <Section id="learning-loop" className="border-t border-border" orb="warm" orbPosition="left">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">

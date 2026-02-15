@@ -19,7 +19,7 @@ const afterStats = [
 
 export function InclusionEffect() {
   return (
-    <Section id="inclusion-effect" className="border-t border-border">
+    <Section id="inclusion-effect" className="border-t border-border" orb="blue" orbPosition="center">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">

@@ -61,13 +61,13 @@ export function PlayerSelect() {
   const { player, setPlayer } = usePlayer();
 
   return (
-    <Section id="player-select" className="border-t border-border">
+    <Section id="player-select" className="border-t border-border" orb="warm" orbPosition="center">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">
             Choose Your Path
           </p>
-          <h2 className="text-3xl font-bold md:text-5xl">
+          <h2 className="text-3xl font-bold md:text-5xl text-gradient">
             How Do You Think?
           </h2>
           <p className="text-muted text-lg max-w-xl mx-auto">
@@ -82,12 +82,12 @@ export function PlayerSelect() {
           <ScrollReveal key={p.type} delay={0.1 + i * 0.05}>
             <button
               onClick={() => setPlayer(p.type)}
-              className={`w-full rounded-xl border p-5 md:p-6 text-left transition-all ${
+              className={`w-full rounded-2xl border p-5 md:p-6 text-left transition-all duration-300 ${
                 player === p.type
-                  ? `${p.borderColor} ${p.bgColor} scale-[1.02]`
+                  ? `${p.borderColor} ${p.bgColor} scale-[1.03] shadow-lg`
                   : player === null
-                  ? "border-border bg-surface hover:border-accent/30 hover:bg-surface/80"
-                  : "border-border/50 bg-surface/50 opacity-50"
+                  ? "card-elevated hover:scale-[1.01]"
+                  : "border-border/30 bg-surface/30 opacity-40"
               }`}
             >
               <div className="space-y-2">

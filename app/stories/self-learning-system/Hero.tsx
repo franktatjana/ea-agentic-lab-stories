@@ -12,9 +12,12 @@ export function Hero() {
   return (
     <section
       id="hook"
-      className="relative flex min-h-screen flex-col items-center justify-center px-6"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 overflow-hidden"
     >
-      <div className="w-full max-w-3xl space-y-10 text-center">
+      <div className="absolute orb orb-blue top-1/3 -right-32 h-[600px] w-[600px] animate-float-slow" />
+      <div className="absolute orb orb-warm bottom-1/4 -left-32 h-[500px] w-[500px] animate-float" />
+
+      <div className="relative z-10 w-full max-w-3xl space-y-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,7 +29,7 @@ export function Hero() {
               <p className="text-sm font-mono uppercase tracking-widest text-muted">
                 Day 1
               </p>
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl border border-border bg-surface flex items-center justify-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl card-elevated flex items-center justify-center">
                 <span className="text-4xl md:text-5xl">📊</span>
               </div>
               <p className="text-sm text-muted font-mono">Your CRM</p>
@@ -45,7 +48,7 @@ export function Hero() {
               <p className="text-sm font-mono uppercase tracking-widest text-muted">
                 Day 365
               </p>
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl border border-border bg-surface flex items-center justify-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl card-elevated flex items-center justify-center">
                 <span className="text-4xl md:text-5xl">📊</span>
               </div>
               <p className="text-sm text-muted font-mono">Your CRM</p>
@@ -59,7 +62,9 @@ export function Hero() {
           transition={{ delay: 1, duration: 0.6 }}
           className="space-y-2"
         >
-          <p className="text-2xl font-bold md:text-4xl">Exactly the same.</p>
+          <p className="text-2xl font-bold md:text-4xl text-gradient-subtle">
+            Exactly the same.
+          </p>
         </motion.div>
 
         <motion.div
@@ -90,7 +95,7 @@ export function Hero() {
           className="space-y-4 pt-4"
         >
           <p className="text-xl text-muted">Your tools don&apos;t get smarter.</p>
-          <p className="text-3xl font-bold text-accent md:text-4xl">
+          <p className="text-3xl font-bold md:text-4xl text-gradient">
             What if they did?
           </p>
         </motion.div>
@@ -110,10 +115,6 @@ export function Hero() {
             <div className="mt-2 text-2xl">&darr;</div>
           </motion.div>
         </motion.div>
-      </div>
-
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-accent/5 blur-3xl" />
       </div>
     </section>
   );

@@ -300,13 +300,13 @@ export function AgentAvatar() {
   };
 
   return (
-    <Section id="agent-avatar" className="border-t border-border">
+    <Section id="agent-avatar" className="border-t border-border" orb="blue" orbPosition="left">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">
             The Solution
           </p>
-          <h2 className="text-3xl font-bold md:text-5xl">
+          <h2 className="text-3xl font-bold md:text-5xl text-gradient">
             Your Agent. Your Way.
           </h2>
           {player && (

@@ -90,7 +90,7 @@ export function AgentConfig() {
   const current = playerLabels[player ?? "talker"];
 
   return (
-    <Section id="agent-config" className="border-t border-border">
+    <Section id="agent-config" className="border-t border-border" orb="warm" orbPosition="right">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">
@@ -109,7 +109,7 @@ export function AgentConfig() {
 
       <div className="mt-12 space-y-6">
         <ScrollReveal delay={0.1}>
-          <div className="rounded-xl border border-border bg-surface overflow-hidden">
+          <div className="rounded-2xl overflow-hidden card-elevated">
             <div className="border-b border-border px-4 py-2">
               <span className="text-xs font-mono text-accent uppercase tracking-widest">
                 Agent Configuration:{" "}

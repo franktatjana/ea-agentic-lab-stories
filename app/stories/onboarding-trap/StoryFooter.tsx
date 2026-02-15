@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function StoryFooter() {
   return (
-    <Section id="cta" className="border-t border-border">
+    <Section id="cta" className="border-t border-border min-h-screen justify-center">
       <ScrollReveal>
         <div className="space-y-8 text-center">
           <div className="space-y-4">

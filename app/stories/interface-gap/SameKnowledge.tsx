@@ -67,7 +67,7 @@ export function SameKnowledge() {
   const { player } = usePlayer();
 
   return (
-    <Section id="same-knowledge" className="border-t border-border">
+    <Section id="same-knowledge" className="border-t border-border" orb="purple" orbPosition="left">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">

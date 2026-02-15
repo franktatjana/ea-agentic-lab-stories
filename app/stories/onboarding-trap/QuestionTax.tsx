@@ -83,7 +83,7 @@ export function QuestionTax() {
               </span>
             </div>
 
-            <div className="h-[280px] overflow-hidden relative">
+            <div className="h-[210px] overflow-hidden relative">
               <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-surface to-transparent z-10" />
               <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-surface to-transparent z-10" />
 

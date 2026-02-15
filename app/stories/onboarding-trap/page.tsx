@@ -5,6 +5,7 @@ import { QuestionTax } from "./QuestionTax";
 import { CostCalculator } from "./CostCalculator";
 import { BeforeAfter } from "./BeforeAfter";
 import { FrameworkDemo } from "./FrameworkDemo";
+import { Blueprint } from "./Blueprint";
 import { StoryFooter } from "./StoryFooter";
 import { StoryLayout } from "./StoryLayout";
 
@@ -24,6 +25,7 @@ export default function OnboardingTrapPage() {
         <CostCalculator />
         <BeforeAfter />
         <FrameworkDemo />
+        <Blueprint />
         <StoryFooter />
       </main>
     </StoryLayout>

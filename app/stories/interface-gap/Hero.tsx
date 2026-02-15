@@ -6,16 +6,19 @@ export function Hero() {
   return (
     <section
       id="hook"
-      className="relative flex min-h-screen flex-col items-center justify-center px-6"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 overflow-hidden"
     >
-      <div className="w-full max-w-3xl space-y-10 text-center">
+      <div className="absolute orb orb-blue top-1/4 -left-32 h-[600px] w-[600px] animate-float-slow" />
+      <div className="absolute orb orb-purple bottom-1/4 -right-32 h-[500px] w-[500px] animate-float" />
+
+      <div className="relative z-10 w-full max-w-3xl space-y-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-2"
         >
-          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl text-gradient">
             You wrote perfect documentation.
           </h1>
         </motion.div>
@@ -68,10 +71,6 @@ export function Hero() {
             <div className="mt-2 text-2xl">&darr;</div>
           </motion.div>
         </motion.div>
-      </div>
-
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-accent/5 blur-3xl" />
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ const sections = [
   { id: "cost", label: "Cost" },
   { id: "compare", label: "Before / After" },
   { id: "demo", label: "How It Works" },
+  { id: "blueprint", label: "Blueprint" },
   { id: "cta", label: "CTA" },
 ];
 
