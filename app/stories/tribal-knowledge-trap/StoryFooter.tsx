@@ -36,8 +36,8 @@ export function StoryFooter() {
           </div>
 
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
-            Built by someone who watched 7 years of knowledge walk out the door
-            with every resignation.
+            Built by a Solutions Architect with 7 years of turning tribal
+            knowledge into lasting systems.
           </p>
         </div>
       </ScrollReveal>
