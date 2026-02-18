@@ -28,9 +28,9 @@ const interfaces = [
     bgColor: "bg-yellow-500/5",
     activeBorder: "border-yellow-500/60",
     activeBg: "bg-yellow-500/15",
-    renderedAs: "Conversational agent",
-    format: "Interactive dialogue",
-    depth: "Answers specific questions",
+    renderedAs: "Video avatar",
+    format: "Face-to-face briefing with live transcript",
+    depth: "Answers questions in real time",
     length: "As long as the conversation needs",
   },
   {

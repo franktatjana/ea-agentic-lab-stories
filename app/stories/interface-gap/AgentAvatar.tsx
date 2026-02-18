@@ -6,67 +6,133 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { usePlayer } from "./PlayerContext";
 
-function TalkerView() {
-  const conversation = [
-    { speaker: "ae", text: "What's our positioning against the incumbent?" },
-    {
-      speaker: "agent",
-      text: "For the Prospect Corp deal specifically, or general positioning?",
-    },
-    {
-      speaker: "ae",
-      text: "Prospect Corp. They mentioned a competitor yesterday.",
-    },
-    {
-      speaker: "agent",
-      text: `Got it. Three key points for Prospect Corp:
-
-First \u2014 they're concerned about cost. The competitor's pricing model will likely exceed budget at their data volume. We have two case studies where similar customers saw 40% cost reduction.
-
-Second \u2014 their security team has concerns about data residency. The competitor's regional options are limited. We should lead with our deployment flexibility.
-
-Third \u2014 the integration with their existing monitoring investment. We can run alongside during migration, the competitor requires full replacement.
-
-Want me to set up talking points for your next call?`,
-    },
-    { speaker: "ae", text: "Yes, and remind me before the Thursday meeting." },
-    {
-      speaker: "agent",
-      text: "Done. I'll send a brief Wednesday evening and a reminder Thursday morning. Anything else?",
-    },
-  ];
-
+function WaveformBar({ delay }: { delay: number }) {
   return (
-    <div className="rounded-xl border border-border bg-surface overflow-hidden">
-      <div className="border-b border-border px-4 py-2 flex items-center gap-2">
-        <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-        <span className="ml-2 text-xs text-muted font-mono">
-          Conversational Mode
+    <motion.div
+      className="w-1 rounded-full bg-yellow-400"
+      style={{ height: 4 }}
+      animate={{
+        height: [4, 16, 8, 20, 6, 14, 4],
+      }}
+      transition={{
+        duration: 1.2,
+        repeat: Infinity,
+        delay,
+        ease: "easeInOut",
+      }}
+    />
+  );
+}
+
+function TalkerView() {
+  return (
+    <div className="rounded-xl border border-yellow-500/20 bg-black/40 overflow-hidden">
+      <div className="border-b border-yellow-500/20 px-4 py-2 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded-full bg-yellow-400 animate-pulse" />
+          <span className="ml-1 text-xs text-yellow-400 font-mono">
+            Video Meeting
+          </span>
+        </div>
+        <span className="text-xs text-muted font-mono">
+          Prospect Corp Briefing
         </span>
       </div>
-      <div className="p-5 md:p-6 space-y-4">
-        {conversation.map((msg, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 + i * 0.15 }}
-            className={`flex ${
-              msg.speaker === "ae" ? "justify-end" : "justify-start"
-            }`}
-          >
-            <div
-              className={`max-w-[85%] rounded-xl px-4 py-3 text-sm ${
-                msg.speaker === "ae"
-                  ? "bg-accent/10 border border-accent/20"
-                  : "bg-surface border border-border"
-              } text-foreground`}
+
+      {/* Two-person video call grid */}
+      <div className="p-4 md:p-6">
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
+          {/* Agent avatar */}
+          <div className="relative rounded-xl bg-gradient-to-b from-yellow-900/20 to-black/60 border border-yellow-500/10 overflow-hidden flex flex-col items-center justify-center py-10 md:py-14">
+            <motion.div
+              animate={{
+                boxShadow: [
+                  "0 0 0 0 rgba(234, 179, 8, 0)",
+                  "0 0 0 14px rgba(234, 179, 8, 0.12)",
+                  "0 0 0 0 rgba(234, 179, 8, 0)",
+                ],
+              }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+              style={{ borderRadius: "50%" }}
             >
-              <p className="whitespace-pre-line leading-relaxed">{msg.text}</p>
+              <motion.img
+                src="https://i.pravatar.cc/300?img=32"
+                alt=""
+                className="w-36 h-36 md:w-48 md:h-48 rounded-full border-3 border-yellow-500/40 object-cover"
+                animate={{
+                  scale: [1, 1.03, 1, 1.02, 1],
+                  rotate: [0, 0.5, -0.5, 0.3, 0],
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </motion.div>
+            <div className="flex items-end justify-center gap-1 h-5 overflow-hidden mt-4">
+              {[0, 0.1, 0.2, 0.15, 0.25, 0.05, 0.18].map((d, i) => (
+                <WaveformBar key={i} delay={d} />
+              ))}
             </div>
-          </motion.div>
-        ))}
+            <p className="text-[10px] text-yellow-400/60 font-mono mt-2">
+              AI Agent
+            </p>
+          </div>
+
+          {/* You (the AE) */}
+          <div className="relative rounded-xl bg-gradient-to-b from-black/40 to-black/60 border border-border/30 overflow-hidden flex flex-col items-center justify-center py-10 md:py-14">
+            <motion.img
+              src="https://i.pravatar.cc/300?img=44"
+              alt=""
+              className="w-36 h-36 md:w-48 md:h-48 rounded-full border-3 border-border/40 object-cover"
+              animate={{
+                scale: [1, 1.02, 1],
+                y: [0, -2, 0],
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <div className="h-5 mt-4" />
+            <p className="text-[10px] text-muted/60 font-mono mt-2">You</p>
+          </div>
+        </div>
+
+        {/* Meeting controls */}
+        <div className="mt-4 flex items-center justify-center gap-5">
+          {[
+            { icon: "🎤", label: "Mute" },
+            { icon: "📹", label: "Camera" },
+            { icon: "📌", label: "Pin insight" },
+            { icon: "🔴", label: "End" },
+          ].map((ctrl) => (
+            <div
+              key={ctrl.label}
+              className="flex flex-col items-center gap-1 text-muted"
+            >
+              <div className="w-9 h-9 rounded-full border border-border bg-surface/50 flex items-center justify-center text-sm cursor-default">
+                {ctrl.icon}
+              </div>
+              <span className="text-[10px] font-mono">{ctrl.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Meeting outcome strip */}
+        <div className="mt-4 pt-3 border-t border-yellow-500/10">
+          <p className="text-[10px] text-yellow-400/60 font-mono uppercase tracking-widest mb-2">
+            After the call
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "3 talking points saved",
+              "Thursday reminder set",
+              "Battlecard updated",
+            ].map((item) => (
+              <span
+                key={item}
+                className="text-xs font-mono text-muted bg-yellow-500/5 border border-yellow-500/10 rounded-full px-3 py-1"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -294,7 +360,7 @@ export function AgentAvatar() {
 
   const modeLabels: Record<string, string> = {
     reader: "Structured Briefing",
-    talker: "Conversation",
+    talker: "Video Avatar",
     visual: "Comparison Canvas",
     doer: "Scenario Practice",
   };

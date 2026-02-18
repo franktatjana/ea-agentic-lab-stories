@@ -14,6 +14,7 @@ const players: {
   bgColor: string;
   description: string;
   preference: string;
+  photo: string;
 }[] = [
   {
     type: "reader",
@@ -24,6 +25,7 @@ const players: {
     bgColor: "bg-accent/10",
     description: "You process information by reading",
     preference: "Give me the document",
+    photo: "https://i.pravatar.cc/64?img=11",
   },
   {
     type: "talker",
@@ -34,6 +36,7 @@ const players: {
     bgColor: "bg-yellow-500/10",
     description: "You process information through conversation",
     preference: "Just explain it to me",
+    photo: "https://i.pravatar.cc/64?img=32",
   },
   {
     type: "visual",
@@ -44,6 +47,7 @@ const players: {
     bgColor: "bg-green-500/10",
     description: "You process information through diagrams",
     preference: "Show me a picture",
+    photo: "https://i.pravatar.cc/64?img=60",
   },
   {
     type: "doer",
@@ -54,6 +58,7 @@ const players: {
     bgColor: "bg-purple-500/10",
     description: "You process information by doing",
     preference: "Let me try it",
+    photo: "https://i.pravatar.cc/64?img=47",
   },
 ];
 
@@ -61,7 +66,7 @@ export function PlayerSelect() {
   const { player, setPlayer } = usePlayer();
 
   return (
-    <Section id="player-select" className="border-t border-border" orb="warm" orbPosition="center">
+    <Section id="player-select" className="border-t border-border min-h-screen justify-center" orb="warm" orbPosition="center">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">
@@ -77,11 +82,16 @@ export function PlayerSelect() {
         </div>
       </ScrollReveal>
 
-      <div className="mt-12 grid grid-cols-2 gap-4">
+      <div className="mt-8 grid grid-cols-2 gap-4">
         {players.map((p, i) => (
           <ScrollReveal key={p.type} delay={0.1 + i * 0.05}>
             <button
-              onClick={() => setPlayer(p.type)}
+              onClick={() => {
+                setPlayer(p.type);
+                setTimeout(() => {
+                  document.getElementById("preference-reality")?.scrollIntoView({ behavior: "smooth" });
+                }, 600);
+              }}
               className={`w-full rounded-2xl border p-5 md:p-6 text-left transition-all duration-300 ${
                 player === p.type
                   ? `${p.borderColor} ${p.bgColor} scale-[1.03] shadow-lg`
@@ -91,7 +101,14 @@ export function PlayerSelect() {
               }`}
             >
               <div className="space-y-2">
-                <span className="text-3xl">{p.icon}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">{p.icon}</span>
+                  <img
+                    src={p.photo}
+                    alt=""
+                    className={`w-10 h-10 rounded-full border-2 ${p.borderColor} object-cover`}
+                  />
+                </div>
                 <p className={`font-bold text-lg ${player === p.type ? p.color : "text-foreground"}`}>
                   {p.label}
                 </p>

@@ -73,35 +73,58 @@ function ReaderView() {
 
 function TalkerView() {
   return (
-    <ScrollReveal delay={0.1}>
-      <div className="mt-12 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-6 md:p-8">
-        <div className="space-y-4 text-lg leading-relaxed">
-          <p className="text-foreground">
-            Here&apos;s the thing most people don&apos;t realize about documentation:
-          </p>
-          <p className="text-foreground">
-            When someone reads a document, they retain about{" "}
-            <span className="text-red-400 font-bold">10%</span> of it. That&apos;s
-            it. But when they have a conversation about the same content?{" "}
-            <span className="text-green-400 font-bold">50%</span>.
-          </p>
-          <p className="text-foreground">
-            And if they actually get to do something hands-on?{" "}
-            <span className="text-accent font-bold">75%</span>.
-          </p>
-          <p className="text-muted">
-            So when someone asks &quot;can you just explain this to me?&quot;
-            instead of reading the doc, they&apos;re not being lazy. They&apos;re
-            being smart about how their brain actually works.
-          </p>
-          <div className="border-t border-yellow-500/20 pt-4 mt-4">
-            <p className="text-yellow-400 font-bold">
-              The format ignored them. Not the other way around.
-            </p>
+    <>
+      <ScrollReveal delay={0.1}>
+        <div className="mt-12 grid grid-cols-2 gap-4">
+          {/* Reading = low retention */}
+          <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-6 flex flex-col items-center justify-center text-center space-y-3">
+            <div className="text-4xl">📄</div>
+            <p className="text-5xl md:text-6xl font-bold text-red-400">10%</p>
+            <p className="text-sm text-muted font-mono">Reading a doc</p>
+          </div>
+          {/* Conversation = high retention */}
+          <div className="rounded-xl border border-green-500/20 bg-green-500/5 p-6 flex flex-col items-center justify-center text-center space-y-3">
+            <div className="text-4xl">🗣️</div>
+            <p className="text-5xl md:text-6xl font-bold text-green-400">50%</p>
+            <p className="text-sm text-muted font-mono">Having a conversation</p>
           </div>
         </div>
-      </div>
-    </ScrollReveal>
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.2}>
+        <div className="mt-6 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-6">
+          <div className="flex items-center gap-4">
+            <img
+              src="https://i.pravatar.cc/128?img=32"
+              alt=""
+              className="w-16 h-16 rounded-full border-2 border-yellow-500/30 object-cover shrink-0"
+            />
+            <div className="space-y-1">
+              <p className="text-foreground font-bold">
+                A face activates mirror neurons.
+              </p>
+              <p className="text-muted text-sm">
+                Builds trust. Increases retention even further.
+              </p>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.3}>
+        <div className="mt-8 text-center space-y-2">
+          <p className="text-muted">
+            &quot;Can you just explain this to me?&quot;
+          </p>
+          <p className="text-yellow-400 font-bold text-lg">
+            Not lazy. Neurologically smart.
+          </p>
+          <p className="text-muted text-sm pt-1">
+            Give them a face, not a cursor.
+          </p>
+        </div>
+      </ScrollReveal>
+    </>
   );
 }
 
@@ -115,23 +138,22 @@ function VisualView() {
           </p>
           <div className="flex items-end justify-between gap-2 h-64">
             {retentionData.map((item, i) => (
-              <div key={item.method} className="flex-1 flex flex-col items-center gap-2">
-                <motion.div
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${item.percent}%` }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: 0.2 + i * 0.1,
-                    duration: 0.8,
-                    ease: "easeOut",
-                  }}
-                  className={`w-full rounded-t-lg ${item.color} relative`}
-                >
-                  <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-mono font-bold text-foreground">
-                    {item.percent}%
-                  </span>
-                </motion.div>
-              </div>
+              <motion.div
+                key={item.method}
+                initial={{ height: 0 }}
+                animate={{ height: Math.round((item.percent / 100) * 256) }}
+                transition={{
+                  delay: 0.2 + i * 0.1,
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                style={{ minWidth: 0 }}
+                className={`flex-1 rounded-t-lg ${item.color} relative`}
+              >
+                <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-mono font-bold text-foreground">
+                  {item.percent}%
+                </span>
+              </motion.div>
             ))}
           </div>
           <div className="flex justify-between gap-2 mt-3 border-t border-border pt-3">
@@ -258,7 +280,7 @@ export function PreferenceReality() {
   const { player } = usePlayer();
 
   return (
-    <Section id="preference-reality" className="border-t border-border">
+    <Section id="preference-reality" className="border-t border-border min-h-screen justify-center">
       <ScrollReveal>
         <div className="space-y-6 text-center">
           <p className="text-sm font-mono uppercase tracking-widest text-accent">

@@ -12,7 +12,7 @@ These aren't feature demos. They're experiences designed to make you feel the pr
 
 **The Self-Learning System** - Your CRM learned nothing from 200 deals. What if it did? Explores how AI agents capture meeting knowledge, learn from deal outcomes, and improve recommendations over time.
 
-**The Interface Gap** - You wrote perfect documentation. Half your team will never read it. Features an interactive "Choose Your Player" system where readers experience the story through their own cognitive style: Reader, Talker, Visual, or Doer.
+**The Interface Gap** - You wrote perfect documentation. Half your team will never read it. Features an interactive "Choose Your Player" system where readers experience the story through their own cognitive style: Reader, Talker (video avatar), Visual, or Doer.
 
 ## Coming Soon
 

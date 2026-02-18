@@ -4,11 +4,16 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
+const personas = {
+  sa: { name: "The SA", type: "Reader", color: "text-accent", borderColor: "border-accent/40", photo: "https://i.pravatar.cc/80?img=11" },
+  ae: { name: "The AE", type: "Talker", color: "text-yellow-400", borderColor: "border-yellow-500/40", photo: "https://i.pravatar.cc/80?img=32" },
+  architect: { name: "The Architect", type: "Visual", color: "text-green-400", borderColor: "border-green-500/40", photo: "https://i.pravatar.cc/80?img=60" },
+  engineer: { name: "The Engineer", type: "Doer", color: "text-purple-400", borderColor: "border-purple-500/40", photo: "https://i.pravatar.cc/80?img=47" },
+};
+
 const scenarios = [
   {
-    name: "The AE",
-    type: "Talker",
-    color: "text-yellow-400",
+    ...personas.ae,
     steps: [
       "Opens document",
       "Skims first paragraph",
@@ -19,9 +24,7 @@ const scenarios = [
     cost: "20 minutes (both people)",
   },
   {
-    name: "The Architect",
-    type: "Visual",
-    color: "text-green-400",
+    ...personas.architect,
     steps: [
       "Opens document",
       "Searches for diagrams: none",
@@ -31,9 +34,7 @@ const scenarios = [
     cost: "45 minutes",
   },
   {
-    name: "The Engineer",
-    type: "Doer",
-    color: "text-purple-400",
+    ...personas.engineer,
     steps: [
       "Opens document",
       'Thinks: "I\'ll read this when I need it"',
@@ -64,7 +65,10 @@ export function TranslationTax() {
           <p className="text-muted uppercase tracking-widest text-xs mb-3">
             Scenario: New competitive positioning needs to be shared
           </p>
-          <p className="text-accent">The SA (Reader) creates:</p>
+          <div className="flex items-center gap-3 mb-1">
+            <img src={personas.sa.photo} alt="" className="w-8 h-8 rounded-full border border-accent/40 object-cover shrink-0" />
+            <span className="text-accent">The SA (Reader) creates:</span>
+          </div>
           <p className="text-muted ml-4">
             └── 12-page competitive analysis document
           </p>
@@ -79,27 +83,35 @@ export function TranslationTax() {
         {scenarios.map((scenario, i) => (
           <ScrollReveal key={scenario.name} delay={0.15 + i * 0.1}>
             <div className="rounded-xl border border-border bg-surface overflow-hidden">
-              <div className="border-b border-border px-4 py-2 flex items-center justify-between">
+              <div className="border-b border-border px-4 py-2 flex items-center gap-3">
+                <img src={scenario.photo} alt="" className={`w-8 h-8 rounded-full border ${scenario.borderColor} object-cover shrink-0`} />
                 <span className={`text-xs font-mono ${scenario.color}`}>
                   {scenario.name} ({scenario.type})
                 </span>
               </div>
-              <div className="p-5 font-mono text-sm space-y-1">
-                {scenario.steps.map((step, j) => (
-                  <motion.p
-                    key={j}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + j * 0.1 }}
-                    className="text-muted"
-                  >
-                    {j < scenario.steps.length - 1 ? "├──" : "└──"} {step}
-                  </motion.p>
-                ))}
-                <p className="text-red-400 mt-2 pt-2 border-t border-border">
-                  Time cost: {scenario.cost}
-                </p>
+              <div className="p-5 flex items-start gap-4">
+                <div className="font-mono text-sm space-y-1 flex-1 min-w-0">
+                  {scenario.steps.map((step, j) => (
+                    <motion.p
+                      key={j}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + j * 0.1 }}
+                      className="text-muted"
+                    >
+                      {j < scenario.steps.length - 1 ? "├──" : "└──"} {step}
+                    </motion.p>
+                  ))}
+                  <p className="text-red-400 mt-2 pt-2 border-t border-border font-mono text-sm">
+                    Time cost: {scenario.cost}
+                  </p>
+                </div>
+                <img
+                  src={scenario.photo.replace("80", "128")}
+                  alt=""
+                  className={`hidden md:block w-20 h-20 rounded-full border-2 ${scenario.borderColor} object-cover shrink-0 opacity-60`}
+                />
               </div>
             </div>
           </ScrollReveal>
