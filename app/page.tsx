@@ -50,6 +50,13 @@ const stories = [
     status: "coming-soon" as const,
     number: "07",
   },
+  {
+    slug: "rfp-fire-drill",
+    title: "The RFP Fire Drill",
+    tagline: "200 pages. 10 days. Your team has done this 47 times, but starts from scratch every time.",
+    status: "live" as const,
+    number: "08",
+  },
 ];
 
 export default function Home() {
