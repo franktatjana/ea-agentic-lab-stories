@@ -57,6 +57,13 @@ const stories = [
     status: "live" as const,
     number: "08",
   },
+  {
+    slug: "loss-nobody-learned-from",
+    title: "The Loss Nobody Learned From",
+    tagline: "You lost a $420K deal last quarter. No postmortem. The same mistakes are happening again.",
+    status: "live" as const,
+    number: "09",
+  },
 ];
 
 export default function Home() {
