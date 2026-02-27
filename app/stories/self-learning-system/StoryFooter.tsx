@@ -41,8 +41,9 @@ export function StoryFooter() {
           </div>
 
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
-            Built on the belief that organizational intelligence should
-            compound, not evaporate.
+            By{" "}
+            <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">Tatjana Frank</a>
+            {" "}&middot; Organizational intelligence should compound, not evaporate.
           </p>
         </div>
       </ScrollReveal>

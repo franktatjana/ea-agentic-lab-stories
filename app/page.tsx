@@ -64,7 +64,24 @@ const stories = [
     status: "live" as const,
     number: "09",
   },
+  {
+    slug: "sales-qbr",
+    title: "The QBR Theater",
+    tagline: "Last quarter's QBR was 47 slides of numbers nobody acted on. This quarter will be the same.",
+    status: "live" as const,
+    number: "10",
+  },
+  {
+    slug: "reinvention-tax",
+    title: "The Reinvention Tax",
+    tagline: "Your team solved this problem 14 times. The 15th time? Starting from scratch.",
+    status: "live" as const,
+    number: "11",
+  },
 ];
+
+const liveStories = stories.filter((s) => s.status === "live");
+const comingSoonStories = stories.filter((s) => s.status === "coming-soon");
 
 export default function Home() {
   return (
@@ -72,7 +89,7 @@ export default function Home() {
       <div className="absolute orb orb-blue top-0 left-1/4 h-[600px] w-[600px] animate-float-slow" />
       <div className="absolute orb orb-purple bottom-0 right-1/4 h-[500px] w-[500px] animate-float" />
 
-      <div className="relative z-10 w-full max-w-2xl space-y-16 text-center">
+      <div className="relative z-10 w-full max-w-5xl space-y-12 text-center">
         <div className="space-y-6">
           <p className="text-sm font-mono uppercase tracking-[0.3em] text-accent">
             EA Agentic Lab
@@ -85,55 +102,94 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="space-y-4 text-left">
-          {stories.map((story) =>
-            story.status === "live" ? (
-              <Link
-                key={story.slug}
-                href={`/stories/${story.slug}`}
-                className="group block rounded-2xl card-elevated p-6 md:p-7"
-              >
-                <div className="flex items-center gap-5">
-                  <span className="text-3xl font-bold text-border group-hover:text-accent/30 transition-colors font-mono shrink-0">
-                    {story.number}
-                  </span>
-                  <div className="space-y-1.5 flex-1 min-w-0">
-                    <h2 className="text-lg font-semibold group-hover:text-accent transition-colors md:text-xl">
-                      {story.title}
-                    </h2>
-                    <p className="text-muted text-sm leading-relaxed">
-                      {story.tagline}
-                    </p>
-                  </div>
-                  <span className="text-muted group-hover:text-accent group-hover:translate-x-1 transition-all text-xl shrink-0">
-                    &rarr;
-                  </span>
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+          {liveStories.map((story) => (
+            <Link
+              key={story.slug}
+              href={`/stories/${story.slug}`}
+              className="group block rounded-2xl card-elevated p-5 md:p-6"
+            >
+              <div className="flex items-start gap-4">
+                <span className="text-2xl font-bold text-border group-hover:text-accent/30 transition-colors font-mono shrink-0 leading-tight mt-0.5">
+                  {story.number}
+                </span>
+                <div className="space-y-1 flex-1 min-w-0">
+                  <h2 className="text-base font-semibold group-hover:text-accent transition-colors md:text-lg leading-snug">
+                    {story.title}
+                  </h2>
+                  <p className="text-muted text-sm leading-relaxed line-clamp-2">
+                    {story.tagline}
+                  </p>
                 </div>
-              </Link>
-            ) : (
-              <div
-                key={story.slug}
-                className="block rounded-2xl border border-border/30 p-6 md:p-7 opacity-40"
-              >
-                <div className="flex items-center gap-5">
-                  <span className="text-3xl font-bold text-border/50 font-mono shrink-0">
-                    {story.number}
-                  </span>
-                  <div className="space-y-1.5 flex-1 min-w-0">
-                    <h2 className="text-lg font-semibold md:text-xl">
-                      {story.title}
-                    </h2>
-                    <p className="text-muted text-sm leading-relaxed">
-                      {story.tagline}
-                    </p>
-                  </div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-muted shrink-0">
-                    Soon
-                  </span>
-                </div>
+                <span className="text-muted group-hover:text-accent group-hover:translate-x-1 transition-all text-lg shrink-0 mt-0.5">
+                  &rarr;
+                </span>
               </div>
-            )
-          )}
+            </Link>
+          ))}
+        </div>
+
+        {comingSoonStories.length > 0 && (
+          <div className="space-y-3">
+            <p className="text-xs font-mono uppercase tracking-[0.2em] text-muted/60">
+              Coming soon
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+              {comingSoonStories.map((story) => (
+                <span
+                  key={story.slug}
+                  className="text-sm text-muted/40 font-mono"
+                >
+                  {story.number}{" "}
+                  <span className="font-sans">{story.title}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="border-t border-border pt-10 space-y-4">
+          <p className="text-sm text-muted">
+            Built by{" "}
+            <a
+              href="https://github.com/franktatjana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-accent transition-colors"
+            >
+              Tatjana Frank
+            </a>
+            , Solutions Architect exploring how AI agents can eliminate
+            repetitive work in enterprise sales.
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href="https://ea-agentic-lab.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono text-muted hover:text-accent transition-colors"
+            >
+              Live Demo &rarr;
+            </a>
+            <span className="text-border">|</span>
+            <a
+              href="https://github.com/franktatjana/ea-agentic-lab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono text-muted hover:text-accent transition-colors"
+            >
+              EA Agentic Lab &rarr;
+            </a>
+            <span className="text-border">|</span>
+            <a
+              href="https://github.com/franktatjana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono text-muted hover:text-accent transition-colors"
+            >
+              GitHub &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </main>

@@ -11,10 +11,11 @@ export function StoryFooter() {
         <div className="space-y-8 text-center">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold md:text-5xl">
-              Your losses already contain the playbook for winning.
+              Stop paying the reinvention tax.
             </h2>
             <p className="text-xl text-muted">
-              Stop letting them vanish into email threads and verbal debriefs.
+              Your team already solved these problems. Playbooks make sure the
+              next person doesn&apos;t have to solve them again.
             </p>
           </div>
 
@@ -39,8 +40,11 @@ export function StoryFooter() {
 
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
             By{" "}
-            <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">Tatjana Frank</a>
-            {" "}&middot; Solutions Architect who learned more from losses than wins.
+            <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
+              Tatjana Frank
+            </a>
+            {" "}&middot; Solutions Architect who reinvented the same wheel one
+            too many times.
           </p>
         </div>
       </ScrollReveal>

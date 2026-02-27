@@ -44,8 +44,9 @@ export function StoryFooter() {
           </div>
 
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
-            Built for teams where not everyone thinks the same way.
-            Which is every team.
+            By{" "}
+            <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">Tatjana Frank</a>
+            {" "}&middot; Built for teams where not everyone thinks the same way.
           </p>
         </div>
       </ScrollReveal>

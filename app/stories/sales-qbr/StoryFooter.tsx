@@ -11,10 +11,11 @@ export function StoryFooter() {
         <div className="space-y-8 text-center">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold md:text-5xl">
-              Your losses already contain the playbook for winning.
+              Your best QBR already has the data.
             </h2>
             <p className="text-xl text-muted">
-              Stop letting them vanish into email threads and verbal debriefs.
+              It&apos;s locked in CRM fields, support tickets, and deal notes.
+              Let agents turn it into decisions.
             </p>
           </div>
 
@@ -40,7 +41,7 @@ export function StoryFooter() {
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
             By{" "}
             <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">Tatjana Frank</a>
-            {" "}&middot; Solutions Architect who learned more from losses than wins.
+            {" "}&middot; Solutions Architect who sat through too many QBRs that changed nothing.
           </p>
         </div>
       </ScrollReveal>
