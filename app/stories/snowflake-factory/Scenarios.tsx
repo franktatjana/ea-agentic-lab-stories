@@ -9,7 +9,7 @@ const scenarios = [
     level: "Individual",
     title: "New SA enters a similar deal",
     body:
-      "Nordics SA is assigned a manufacturing account running Splunk, evaluating alternatives. Never handled this before. Searches #manufacturing #security #splunk-competitive.",
+      "Nordics SA is assigned a manufacturing account running an incumbent SIEM, evaluating alternatives. Never handled this before. Searches #manufacturing #security #competitor-a.",
     outcome:
       "Finds the DACH brief in 15 minutes. Reuses the hybrid architecture diagram and CFO ROI framing instead of rebuilding from scratch.",
     signal: "Pattern reused, not reinvented.",

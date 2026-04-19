@@ -26,7 +26,7 @@ function WaveformBar({ delay }: { delay: number }) {
 
 function TalkerView() {
   return (
-    <div className="rounded-xl border border-yellow-500/20 bg-black/40 overflow-hidden">
+    <div className="rounded-xl border border-yellow-500/20 bg-surface overflow-hidden">
       <div className="border-b border-yellow-500/20 px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-yellow-400 animate-pulse" />
@@ -43,7 +43,7 @@ function TalkerView() {
       <div className="p-4 md:p-6">
         <div className="grid grid-cols-2 gap-3 md:gap-4">
           {/* Agent avatar */}
-          <div className="relative rounded-xl bg-gradient-to-b from-yellow-900/20 to-black/60 border border-yellow-500/10 overflow-hidden flex flex-col items-center justify-center py-10 md:py-14">
+          <div className="relative rounded-xl bg-gradient-to-b from-yellow-500/10 to-surface-raised border border-yellow-500/10 overflow-hidden flex flex-col items-center justify-center py-10 md:py-14">
             <motion.div
               animate={{
                 boxShadow: [
@@ -77,7 +77,7 @@ function TalkerView() {
           </div>
 
           {/* You (the AE) */}
-          <div className="relative rounded-xl bg-gradient-to-b from-black/40 to-black/60 border border-border/30 overflow-hidden flex flex-col items-center justify-center py-10 md:py-14">
+          <div className="relative rounded-xl bg-gradient-to-b from-surface to-surface-raised border border-border/30 overflow-hidden flex flex-col items-center justify-center py-10 md:py-14">
             <motion.img
               src="https://i.pravatar.cc/300?img=44"
               alt=""

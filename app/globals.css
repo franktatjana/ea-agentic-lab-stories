@@ -1,6 +1,22 @@
 @import "tailwindcss";
 
 :root {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --muted: #52525b;
+  --accent: #2563eb;
+  --accent-dim: #1d4ed8;
+  --surface: #ffffff;
+  --surface-raised: #f4f4f5;
+  --border: #e4e4e7;
+  --glow-blue: rgba(37, 99, 235, 0.12);
+  --glow-purple: rgba(147, 51, 234, 0.12);
+  --shadow-color: rgba(15, 23, 42, 0.08);
+  --shadow-color-strong: rgba(15, 23, 42, 0.14);
+  --card-highlight: rgba(255, 255, 255, 0.8);
+}
+
+.dark {
   --background: #09090b;
   --foreground: #fafafa;
   --muted: #a1a1aa;
@@ -11,6 +27,9 @@
   --border: #27272a;
   --glow-blue: rgba(59, 130, 246, 0.15);
   --glow-purple: rgba(168, 85, 247, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-color-strong: rgba(0, 0, 0, 0.5);
+  --card-highlight: rgba(255, 255, 255, 0.03);
 }
 
 @theme inline {
@@ -43,11 +62,18 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: var(--background);
+  color: #ffffff;
 }
 
 /* Gradient text utility */
 .text-gradient {
+  background: linear-gradient(135deg, #1e293b 0%, #2563eb 50%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient {
   background: linear-gradient(135deg, #fff 0%, #3b82f6 50%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,6 +81,13 @@ body {
 }
 
 .text-gradient-warm {
+  background: linear-gradient(135deg, #1e293b 0%, #d97706 50%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient-warm {
   background: linear-gradient(135deg, #fff 0%, #f59e0b 50%, #ef4444 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,6 +95,13 @@ body {
 }
 
 .text-gradient-subtle {
+  background: linear-gradient(135deg, #09090b 0%, #52525b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient-subtle {
   background: linear-gradient(135deg, #fafafa 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -70,31 +110,43 @@ body {
 
 /* Card with depth */
 .card-elevated {
-  background: linear-gradient(145deg, var(--surface-raised) 0%, var(--surface) 100%);
+  background: linear-gradient(145deg, var(--surface) 0%, var(--surface-raised) 100%);
   border: 1px solid var(--border);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.03),
-    0 4px 24px rgba(0, 0, 0, 0.4),
-    0 1px 2px rgba(0, 0, 0, 0.3);
+    0 0 0 1px var(--card-highlight),
+    0 4px 24px var(--shadow-color),
+    0 1px 2px var(--shadow-color);
   transition: all 0.3s ease;
 }
 
+.dark .card-elevated {
+  background: linear-gradient(145deg, var(--surface-raised) 0%, var(--surface) 100%);
+}
+
 .card-elevated:hover {
-  border-color: rgba(59, 130, 246, 0.3);
+  border-color: rgba(37, 99, 235, 0.4);
   box-shadow:
-    0 0 0 1px rgba(59, 130, 246, 0.1),
-    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(37, 99, 235, 0.12),
+    0 8px 40px var(--shadow-color-strong),
     0 0 60px var(--glow-blue);
   transform: translateY(-2px);
 }
 
+.dark .card-elevated:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.1),
+    0 8px 40px var(--shadow-color-strong),
+    0 0 60px var(--glow-blue);
+}
+
 /* Glow card with colored accent */
 .card-glow-blue {
-  box-shadow: 0 0 40px var(--glow-blue), 0 4px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 40px var(--glow-blue), 0 4px 24px var(--shadow-color);
 }
 
 .card-glow-purple {
-  box-shadow: 0 0 40px var(--glow-purple), 0 4px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 40px var(--glow-purple), 0 4px 24px var(--shadow-color);
 }
 
 /* Ambient orb backgrounds */
@@ -107,14 +159,26 @@ body {
 }
 
 .orb-blue {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+}
+
+.dark .orb-blue {
   background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
 }
 
 .orb-purple {
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.07) 0%, transparent 70%);
+}
+
+.dark .orb-purple {
   background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
 }
 
 .orb-warm {
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.06) 0%, transparent 70%);
+}
+
+.dark .orb-warm {
   background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
 }
 

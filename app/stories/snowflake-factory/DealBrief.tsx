@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const tags = ["#manufacturing", "#DACH", "#security", "#observability", "#hybrid", "#splunk-competitive", "#servicenow"];
+const tags = ["#manufacturing", "#DACH", "#security", "#observability", "#hybrid", "#competitor-a", "#itsm-integration"];
 
 export function DealBrief() {
   return (
@@ -52,7 +52,7 @@ export function DealBrief() {
                 <div><span className="text-foreground">Industry:</span> Manufacturing</div>
                 <div><span className="text-foreground">Region:</span> DACH</div>
                 <div><span className="text-foreground">Date:</span> Q1 2026</div>
-                <div><span className="text-foreground">Competitor:</span> Splunk</div>
+                <div><span className="text-foreground">Competitor:</span> Competitor A</div>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ export function DealBrief() {
               <p className="text-accent font-bold">## Shelf Life</p>
               <ul className="space-y-1 text-xs text-muted pl-4">
                 <li>&middot; Hybrid architecture approach: still valid</li>
-                <li>&middot; Splunk positioning: still relevant, pricing gap narrowed &rarr; needs update</li>
+                <li>&middot; Competitor A positioning: still relevant, pricing gap narrowed &rarr; needs update</li>
                 <li>&middot; ServiceNow gap: still exists as of Q1 2026</li>
               </ul>
             </div>

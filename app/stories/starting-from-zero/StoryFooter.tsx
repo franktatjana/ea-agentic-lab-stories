@@ -11,10 +11,12 @@ export function StoryFooter() {
         <div className="space-y-8 text-center">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold md:text-5xl">
-              The repository does not replace SA judgment.
+              You already paid for the lessons.
             </h2>
-            <p className="text-xl text-gradient font-bold md:text-3xl">
-              It makes SA judgment transferable.
+            <p className="text-xl text-muted">
+              247 times, across 8 sellers, over 5 years.
+              <br />
+              The next deal should cost a fraction of the first.
             </p>
           </div>
 
@@ -40,7 +42,7 @@ export function StoryFooter() {
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
             By{" "}
             <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">Tatjana Frank</a>
-            {" "}&middot; Solutions Architect focused on making field experience reusable across teams.
+            {" "}&middot; Solutions Architect who opened one too many blank documents.
           </p>
         </div>
       </ScrollReveal>
