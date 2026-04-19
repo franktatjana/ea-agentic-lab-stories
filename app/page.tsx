@@ -1,6 +1,14 @@
 import Link from "next/link";
 
-const stories = [
+type Story = {
+  slug: string;
+  title: string;
+  tagline: string;
+  status: "live" | "coming-soon";
+  number: string;
+};
+
+const stories: Story[] = [
   {
     slug: "onboarding-trap",
     title: "The Onboarding Trap",
@@ -33,21 +41,21 @@ const stories = [
     slug: "question-tax",
     title: "The Question Tax",
     tagline: "Your senior SA answered 'Where is the pricing doc?' 23 times this month.",
-    status: "coming-soon" as const,
+    status: "live" as const,
     number: "05",
   },
   {
     slug: "starting-from-zero",
     title: "Starting from Zero",
     tagline: "247 deals closed. Every new one still starts with a blank page.",
-    status: "coming-soon" as const,
+    status: "live" as const,
     number: "06",
   },
   {
     slug: "handoff-gap",
     title: "The Handoff Gap",
     tagline: "Sales closed the deal. Nobody told the CA what was promised.",
-    status: "coming-soon" as const,
+    status: "live" as const,
     number: "07",
   },
   {
@@ -78,6 +86,13 @@ const stories = [
     status: "live" as const,
     number: "11",
   },
+  {
+    slug: "snowflake-factory",
+    title: "The Snowflake Factory",
+    tagline: "Every deal teaches. No deal transfers. Turning SA field experience into a living repository.",
+    status: "live" as const,
+    number: "12",
+  },
 ];
 
 const liveStories = stories.filter((s) => s.status === "live");
@@ -85,7 +100,7 @@ const comingSoonStories = stories.filter((s) => s.status === "coming-soon");
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center px-6 pt-24 pb-16 overflow-hidden">
+    <main className="relative flex min-h-screen flex-col items-center px-6 pt-10 md:pt-14 pb-16 overflow-hidden">
       <div className="absolute orb orb-blue top-0 left-1/4 h-[600px] w-[600px] animate-float-slow" />
       <div className="absolute orb orb-purple bottom-0 right-1/4 h-[500px] w-[500px] animate-float" />
 
@@ -100,6 +115,34 @@ export default function Home() {
           <p className="text-muted text-lg max-w-md mx-auto">
             Interactive experiences about the pain points AI agents solve in enterprise sales.
           </p>
+          <div className="flex items-center justify-center gap-4 pt-2">
+            <a
+              href="https://ea-agentic-lab.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono font-bold text-muted hover:text-accent transition-colors"
+            >
+              Live Demo &rarr;
+            </a>
+            <span className="text-border">|</span>
+            <a
+              href="https://github.com/franktatjana/ea-agentic-lab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono font-bold text-muted hover:text-accent transition-colors"
+            >
+              EA Agentic Lab &rarr;
+            </a>
+            <span className="text-border">|</span>
+            <a
+              href="https://github.com/franktatjana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono font-bold text-muted hover:text-accent transition-colors"
+            >
+              GitHub &rarr;
+            </a>
+          </div>
         </div>
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
@@ -167,7 +210,7 @@ export default function Home() {
               href="https://ea-agentic-lab.onrender.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-mono text-muted hover:text-accent transition-colors"
+              className="text-xs font-mono font-bold text-muted hover:text-accent transition-colors"
             >
               Live Demo &rarr;
             </a>
@@ -176,7 +219,7 @@ export default function Home() {
               href="https://github.com/franktatjana/ea-agentic-lab"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-mono text-muted hover:text-accent transition-colors"
+              className="text-xs font-mono font-bold text-muted hover:text-accent transition-colors"
             >
               EA Agentic Lab &rarr;
             </a>
@@ -185,7 +228,7 @@ export default function Home() {
               href="https://github.com/franktatjana"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-mono text-muted hover:text-accent transition-colors"
+              className="text-xs font-mono font-bold text-muted hover:text-accent transition-colors"
             >
               GitHub &rarr;
             </a>
