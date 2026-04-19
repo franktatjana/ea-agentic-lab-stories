@@ -40,7 +40,7 @@ export function StoryFooter() {
           <p className="text-sm text-muted pt-8 max-w-md mx-auto font-mono">
             By{" "}
             <a href="https://github.com/franktatjana" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">Tatjana Frank</a>
-            {" "}&middot; Principal Solution Architect, EMEA. Small ask. Big potential. One decision away.
+            {" "}&middot; Principal Solution Architect, EMEA, tired of watching the same field knowledge disappear into private notebooks every time a deal closes.
           </p>
         </div>
       </ScrollReveal>
