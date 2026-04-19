@@ -36,12 +36,12 @@ const options = [
     icon: "@",
   },
   {
-    label: "Option C: Search Confluence",
+    label: "Option C: Search the wiki",
     result: "847 results, 12 outdated, 3 relevant, 0 findable",
     icon: "?",
   },
   {
-    label: "Option D: Check Google Drive",
+    label: "Option D: Check shared drive",
     result: "234 files, 15 folders, no clear answer",
     icon: "D",
   },
@@ -105,10 +105,10 @@ export function QuestionTax() {
           </p>
         </ScrollReveal>
 
-        {/* Interactive Slack panel */}
+        {/* Interactive chat panel */}
         <ScrollReveal delay={0.1}>
           <div className="rounded-xl border border-border bg-surface overflow-hidden">
-            {/* Slack-style header */}
+            {/* Chat-style header */}
             <div className="border-b border-border px-6 py-3 flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500/60" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
@@ -184,8 +184,8 @@ export function QuestionTax() {
               You asked 12 questions today. You&apos;ll ask 12 more tomorrow.
             </p>
             <p className="text-sm text-muted text-center">
-              The answers exist. Somewhere. In someone&apos;s head. In a Slack
-              thread from 2022. In a Google Doc last edited by someone who left.
+              The answers exist. Somewhere. In someone&apos;s head. In a chat
+              thread from 2022. In a shared doc last edited by someone who left.
             </p>
             <div className="grid grid-cols-3 gap-4 pt-3 border-t border-border">
               <div className="text-center">

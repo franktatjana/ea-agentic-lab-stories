@@ -24,7 +24,7 @@ const chain = [
     tone: "formal, binding",
   },
   {
-    role: "Customer (internal Slack)",
+    role: "Customer (internal chat)",
     quote:
       "We're getting a dedicated TAM for the first 90 days, per what they told us.",
     tone: "expectation, recorded",

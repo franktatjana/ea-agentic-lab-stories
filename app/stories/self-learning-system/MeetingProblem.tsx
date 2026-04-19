@@ -78,7 +78,7 @@ export function MeetingProblem() {
                   >
                     &quot;Good meeting&quot;{" "}
                     <span className="text-muted/60">
-                      (in Salesforce notes)
+                      (in CRM notes)
                     </span>
                   </motion.p>
                 </div>

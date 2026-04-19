@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const without = [
-  { label: "Handoff artifact", value: "MSA + Slack thread + memory" },
+  { label: "Handoff artifact", value: "MSA + chat thread + memory" },
   { label: "Who reconciles commitments", value: "Nobody, until the customer does" },
   { label: "CA awareness of verbal promises", value: "Discovers on customer call" },
   { label: "Time to first drift", value: "8 days" },

@@ -16,7 +16,7 @@ const scenarios = [
     quarter: "Q2 2024",
     who: "Mike (Mid-level SA)",
     problem: "Customer needs multi-region failover architecture",
-    solution: "Searched Confluence. Found nothing. Built from scratch, 4 weeks",
+    solution: "Searched the wiki. Found nothing. Built from scratch, 4 weeks",
     outcome: "Won the deal. Different architecture than Sarah's. Both work.",
   },
   {

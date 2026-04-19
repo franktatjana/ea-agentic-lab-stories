@@ -5,13 +5,13 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const pings = [
-  { time: "08:12", from: "Amir (new SA)", channel: "Slack DM", q: "where's the pricing deck for mid-market?" },
-  { time: "09:34", from: "Priya (AE)", channel: "Slack #deals", q: "John, quick q — current discount tiers?" },
+  { time: "08:12", from: "Amir (new SA)", channel: "Chat DM", q: "where's the pricing deck for mid-market?" },
+  { time: "09:34", from: "Priya (AE)", channel: "Chat #deals", q: "John, quick q — current discount tiers?" },
   { time: "10:47", from: "Diego (partner)", channel: "Email", q: "Can you send the latest pricing one-pager?" },
-  { time: "11:05", from: "Sarah (SE)", channel: "Slack DM", q: "Hey, do we have EU pricing handy?" },
-  { time: "13:22", from: "Mike (AE)", channel: "Teams chat", q: "what's the floor on enterprise bundle?" },
+  { time: "11:05", from: "Sarah (SE)", channel: "Chat DM", q: "Hey, do we have EU pricing handy?" },
+  { time: "13:22", from: "Mike (AE)", channel: "Chat thread", q: "what's the floor on enterprise bundle?" },
   { time: "14:10", from: "Lena (new hire)", channel: "1:1 ping", q: "Where should I look for pricing?" },
-  { time: "15:41", from: "Raj (SE)", channel: "Slack DM", q: "pricing sheet link?" },
+  { time: "15:41", from: "Raj (SE)", channel: "Chat DM", q: "pricing sheet link?" },
   { time: "16:29", from: "Customer", channel: "Forwarded by AE", q: "Can you share your rate card?" },
 ];
 

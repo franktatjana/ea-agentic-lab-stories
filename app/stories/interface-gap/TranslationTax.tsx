@@ -18,7 +18,7 @@ const scenarios = [
       "Opens document",
       "Skims first paragraph",
       "Closes document",
-      'Slacks the author: "Hey can you give me the TL;DR?"',
+      'Pings the author: "Hey can you give me the TL;DR?"',
       "Author explains verbally for 15 minutes",
     ],
     cost: "20 minutes (both people)",

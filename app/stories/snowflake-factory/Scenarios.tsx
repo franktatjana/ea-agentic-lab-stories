@@ -18,7 +18,7 @@ const scenarios = [
     level: "Team",
     title: "Quarterly review surfaces a systemic gap",
     body:
-      "SA Intelligence Lead reviews 10 briefs across EMEA. ServiceNow integration appears as a gap in 4 of 10 deals. Different teams built separate workarounds, no shared visibility.",
+      "SA Intelligence Lead reviews 10 briefs across EMEA. An ITSM integration appears as a gap in 4 of 10 deals. Different teams built separate workarounds, no shared visibility.",
     outcome:
       "Gap escalated to SA leadership and PMs. One integration playbook documented and shared.",
     signal: "One systemic fix eliminates duplicated effort on every future deal.",

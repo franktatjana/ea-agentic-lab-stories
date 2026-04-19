@@ -20,7 +20,7 @@ const timeline = [
     label: "The Search",
     events: [
       '"Didn\'t we answer this for Globex last year?"',
-      "3 people search Confluence, Slack, Google Drive",
+      "3 people search the wiki, chat, shared drives",
       "Found: 2 outdated drafts, 1 wrong version",
     ],
     color: "text-orange-400",

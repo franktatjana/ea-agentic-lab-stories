@@ -11,7 +11,7 @@ const without = [
   },
   {
     question: '"Where is the security questionnaire template?"',
-    answer: "Ask around. Maybe Confluence. Maybe someone's laptop.",
+    answer: "Ask around. Maybe the wiki. Maybe someone's laptop.",
   },
   {
     question: '"What should the new SA do first?"',

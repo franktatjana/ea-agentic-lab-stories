@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const breakdown = [
-  { label: "Pings answered per week", value: "~40", note: "Slack, email, DMs, hallway" },
+  { label: "Pings answered per week", value: "~40", note: "Chat, email, DMs, hallway" },
   { label: "Avg time per interruption", value: "8 min", note: "Answer + context reload" },
   { label: "Unique questions", value: "~12%", note: "88% have been asked before" },
   { label: "Weekly hours lost", value: "5.3h", note: "Across meetings, deep work, weekends" },

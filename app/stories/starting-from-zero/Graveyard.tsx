@@ -37,7 +37,7 @@ export function Graveyard() {
       <ScrollReveal delay={0.1}>
         <div className="mt-12 mx-auto max-w-3xl rounded-xl border border-border bg-surface overflow-hidden">
           <div className="border-b border-border px-4 py-3 flex items-center justify-between font-mono text-xs text-muted">
-            <span>SharePoint &middot; /discovery_docs</span>
+            <span>Shared drive &middot; /discovery_docs</span>
             <span>Sorted by: last opened</span>
           </div>
           <div className="divide-y divide-border">

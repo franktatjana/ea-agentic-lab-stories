@@ -27,14 +27,14 @@ const timeline = [
     label: "Last day",
     dialog: [
       { speaker: "Manager", text: "Quick 30 minutes for critical handoffs?" },
-      { speaker: "John", text: "I documented the main things in a Google Doc." },
+      { speaker: "John", text: "I documented the main things in a shared doc." },
     ],
   },
   {
     day: "Day 11",
     label: "First day without John",
     dialog: [
-      { speaker: "Team", text: "Where's the Google Doc?" },
+      { speaker: "Team", text: "Where's the shared doc?" },
       { speaker: "Team", text: "He said he shared it..." },
       { speaker: "Team", text: "Those were deleted with his account." },
     ],

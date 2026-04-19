@@ -12,7 +12,7 @@ const stages = [
     description: "The deal is lost. Meeting notes, emails, and verbal debriefs exist somewhere.",
     items: [
       { text: "Loss review meeting notes", location: "Someone's notebook" },
-      { text: "Slack thread with hot takes", location: "Buried in #deals" },
+      { text: "Chat thread with hot takes", location: "Buried in #deals" },
       { text: "AE's verbal debrief to manager", location: "Forgotten by Friday" },
     ],
     color: "text-red-400",

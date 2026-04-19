@@ -59,7 +59,7 @@ export function DealBrief() {
             <div className="space-y-2">
               <p className="text-accent font-bold">## Win Factors</p>
               <ul className="space-y-1 text-xs text-muted pl-4">
-                <li>&middot; Early PM engagement unlocked roadmap conversation on Azure native support</li>
+                <li>&middot; Early PM engagement unlocked roadmap conversation on cloud-native support</li>
                 <li>&middot; Hybrid architecture addressed on-prem constraint competitors ignored</li>
                 <li>&middot; Transparent cost structure built trust at CFO level</li>
               </ul>
@@ -79,7 +79,7 @@ export function DealBrief() {
               <ul className="space-y-1 text-xs text-muted pl-4">
                 <li>&middot; Hybrid architecture approach: still valid</li>
                 <li>&middot; Competitor A positioning: still relevant, pricing gap narrowed &rarr; needs update</li>
-                <li>&middot; ServiceNow gap: still exists as of Q1 2026</li>
+                <li>&middot; ITSM integration gap: still exists as of Q1 2026</li>
               </ul>
             </div>
 
@@ -88,7 +88,7 @@ export function DealBrief() {
               <ul className="space-y-1 text-xs text-muted pl-4">
                 <li>&middot; Hybrid architecture pattern: seen in 3 other DACH enterprise deals</li>
                 <li>&middot; PM early engagement: confirmed critical in 2 additional won deals</li>
-                <li>&middot; ServiceNow gap: reported by 4 SAs across EMEA &rarr; <span className="text-accent">systemic</span></li>
+                <li>&middot; ITSM integration gap: reported by 4 SAs across EMEA &rarr; <span className="text-accent">systemic</span></li>
               </ul>
             </div>
 

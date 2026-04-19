@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const without = [
   {
     question: '"Where is the Globex response?"',
-    answer: "Search Slack, email, 3 drives. Maybe ask Sarah, who left.",
+    answer: "Search chat, email, 3 drives. Maybe ask Sarah, who left.",
   },
   {
     question: '"Should we bid on this?"',

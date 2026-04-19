@@ -21,7 +21,7 @@ export function Hero() {
             <span className="text-gradient-warm">CA found out day 31.</span>
           </h1>
           <p className="text-lg text-muted md:text-xl max-w-2xl mx-auto">
-            The contract says one thing. The Slack thread says another.
+            The contract says one thing. The chat thread says another.
             The customer remembers a third. Your CA inherits all three.
           </p>
         </motion.div>

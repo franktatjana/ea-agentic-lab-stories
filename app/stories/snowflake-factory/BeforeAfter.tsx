@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const without = [
-  { label: "Knowledge store", value: "Private notebooks, SharePoint folders, SA memory" },
+  { label: "Knowledge store", value: "Private notebooks, shared drives, SA memory" },
   { label: "Search", value: "Ping a colleague, hope they&apos;re still here" },
   { label: "Pattern detection", value: "Nobody looking across deals" },
   { label: "Shelf life", value: "Decays the day the deal closes" },
