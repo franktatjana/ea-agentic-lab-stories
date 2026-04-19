@@ -30,6 +30,36 @@ export function StoryNav({ sections }: StoryNavProps) {
     return () => observers.forEach((o) => o.disconnect());
   }, [sections]);
 
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const target = e.target as HTMLElement | null;
+      if (target && ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) return;
+      if (target?.isContentEditable) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+      const last = sections.length - 1;
+      if (e.key === "ArrowDown" || e.key === "PageDown") {
+        if (active < last) {
+          e.preventDefault();
+          document.getElementById(sections[active + 1].id)?.scrollIntoView({ behavior: "smooth" });
+        }
+      } else if (e.key === "ArrowUp" || e.key === "PageUp") {
+        if (active > 0) {
+          e.preventDefault();
+          document.getElementById(sections[active - 1].id)?.scrollIntoView({ behavior: "smooth" });
+        }
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        document.getElementById(sections[0].id)?.scrollIntoView({ behavior: "smooth" });
+      } else if (e.key === "End") {
+        e.preventDefault();
+        document.getElementById(sections[last].id)?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [sections, active]);
+
   const isLast = active >= sections.length - 1;
   const nextSection = sections[active + 1];
 
