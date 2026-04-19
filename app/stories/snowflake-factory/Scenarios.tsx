@@ -68,14 +68,14 @@ export function Scenarios() {
         </div>
       </ScrollReveal>
 
-      <div className="mt-12 space-y-5 max-w-3xl mx-auto">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
         {scenarios.map((s, i) => (
           <ScrollReveal key={s.title} delay={i * 0.12}>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="card-elevated rounded-xl p-6 md:p-7 space-y-4"
+              className="card-elevated rounded-xl p-6 md:p-7 space-y-4 h-full"
             >
               <div className="flex items-baseline gap-4 flex-wrap">
                 <span className={`text-xs font-mono uppercase tracking-widest ${levelColor[s.level]}`}>
